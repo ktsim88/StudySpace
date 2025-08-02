@@ -46,7 +46,7 @@
             </a>
             <!-- dropdown -->
              <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Letter Day
             </button>
             <select class="dropdown-menu" id="letterDay">
@@ -104,7 +104,18 @@
             </div>
           </div>
           <div class="col-8">
-            <iframe src="https://calendar.google.com/calendar/embed?src=526ktsim%40frhsd.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            <h2>To-Do List</h2>
+            <h5 id="taskCounter"></h5>
+                    <div class="row g-2">
+                        <div class="col-8">
+                            <input type="text" id="taskInput" class="form-control" placeholder="Enter a Task">
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary w-100" id="addTaskBtn">Add Task</button>
+                        </div>
+                    </div>
+            <ul id="taskList" class="list-group mt-3"></ul>
+            <button id="clearTaskBtn">Clear All Tasks</button>
           </div>
           <div class="col-2">
             <!-- calender -->
@@ -126,5 +137,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
+    <script src="todolist.js"></script>
   </body>
 </html>

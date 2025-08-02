@@ -31,8 +31,16 @@ function updateSchedule(day) {
 // Event listener for dropdown change
 letterDaySelector.addEventListener('change', () => {
     const selectedDay = letterDaySelector.value;
+    localStorage.setItem('selectedLetterDay', selectedDay)
     updateSchedule(selectedDay);
 });
 
-// Initialize on page load with default selected value
-updateSchedule(letterDaySelector.value);
+// On page load, get saved letter day or fallback to dropdown's default
+const savedDay = localStorage.getItem('selectedLetterDay');
+
+if (savedDay && scheduleByLetterDay[savedDay]) {
+    letterDaySelector.value = savedDay;  // Update dropdown visually
+    updateSchedule(savedDay);
+} else {
+    updateSchedule(letterDaySelector.value);
+}
